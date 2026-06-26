@@ -147,6 +147,23 @@ html, body {
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Asegura legibilidad sobre cualquier fondo */
 }
 
+.fondo {
+    display: flex;
+    flex-direction: column; /* Obliga al pie de imagen a ir estrictamente abajo */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px; /* Controla el ancho máximo de la tarjeta de fondo en la pantalla */
+    margin: 20px auto 0 auto; /* Separa la imagen de la descripción de arriba */
+}
+
+.background {
+    width: 100%;
+    max-height: 45vh; /* Ajusta la altura del render para que no empuje el texto fuera de la pantalla */
+    object-fit: contain; /* Conserva la proporción original de tu dibujo de Harmony */
+    border-radius: 8px; /* Un toque estético limpio para los bordes */
+}
+
 
 /* TUS KEYFRAMES ORIGINALES (Asegúrate de tenerlos al final de tu CSS) */
 @keyframes fadeIn {
