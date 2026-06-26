@@ -113,7 +113,7 @@ html, body {
     align-items: flex-start; /* Alinea los personajes desde arriba de forma simétrica */
     gap: 40px; 
     width: 100%; /* Subido a 100% para que use todo el espacio de la caja de zoom */
-    max-width: 900px; /* Un poco más ancho para que entren cómodos los 3 personajes */
+    max-width: 1200px; /* Un poco más ancho para que entren cómodos los 3 personajes */
     margin: 20px auto 0 auto;
 }
 
