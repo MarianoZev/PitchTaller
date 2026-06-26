@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: #ebdb2f; /* Fondo negro de base para el fade */
+    overflow: hidden; /* Desactiva por completo el scroll físico del navegador */
+}
+/* EL CONTENEDOR DE LA PÁGINA (CAPA) */
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 60px 40px; /* Margen superior amplio para el título */
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Todo se alinea arriba por defecto */
+    align-items: center;
+    
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease;
+}
+
+/* LA CAPA VISIBLE (Lógica de tu JS) */
+.page.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* EL CONTENEDOR DEL TÍTULO: Estricto y fijo arriba */
+.seccion-header {
+    width: 100%;
+    margin-bottom: 50px; /* Distancia idéntica en todas las páginas hacia abajo */
+    text-align: center;
+}
+
+.seccion-header .titulo {
+    font-family: sans-serif;
+    font-size: 6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+/* TU CAJA ANIMADA MODIFICADA: Ahora solo contiene la descripción */
+.zoom-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 80%;
+    width: 100%;
+    
+    /* Mantiene tus animaciones originales intactas */
+    animation: 
+        fadeIn 2s ease-out forwards, 
+        slowZoom 10s linear infinite alternate;
+}
+
+.zoom-text .descripcion {
+    font-family: sans-serif;
+    font-size: 4rem;
+    color: #000000;
+    line-height: 1.6;
+}
+
+.imagen-yo {
+    display: block;
+    max-width: 30%;
+    max-height: 55vh; /* Evita que se salga de la pantalla */
+    object-fit: contain; /* Conserva la proporción original del dibujo */
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.mi-fila {
+    display: flex !important; /* El !important asegura que ignore el flex-direction del contenedor padre */
+    flex-direction: row !important; 
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Separación fija entre el texto y la imagen */
+    width: 70%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+
+/* CONTROL DE LA IMAGEN EN LA FILA */
+.mi-fila .imagen-yo {
+    width: 100%;
+    max-height: 50vh; /* Evita que crezca tanto que rompa la fila */
+    object-fit: contain; /* Mantiene el dibujo de Harmony perfecto sin estirarse */
+}
+
+
+.personajes {
+    display: flex !important; 
+    flex-direction: row !important; 
+    justify-content: center;
+    align-items: flex-start; /* Alinea los personajes desde arriba de forma simétrica */
+    gap: 40px; 
+    width: 100%; /* Subido a 100% para que use todo el espacio de la caja de zoom */
+    max-width: 900px; /* Un poco más ancho para que entren cómodos los 3 personajes */
+    margin: 20px auto 0 auto;
+}
+
+/* ESTO ES LO QUE FALTABA: Obliga a la imagen y al texto a apilarse verticalmente */
+.personajes .columna {
+    flex: 1; /* Distribuye el ancho por igual entre los 3 personajes */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.personajes .imagen-ellos {
+    width: 100%;
+    max-height: 45vh; /* Ajustado para dar espacio al pie de imagen */
+    object-fit: contain; 
+    border-radius: 8px; /* Un toque estético opcional */
+}
+
+
+
+.pie-imagen {
+    font-family: sans-serif;
+    font-size: 2rem; /* Un poco más pequeño para que parezca pie de foto */
+    color: #000000; /* Color grisáceo sutil para que no compita con el título */
+    margin-top: 12px; /* Espacio fijo entre la base de la imagen y el texto */
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Asegura legibilidad sobre cualquier fondo */
+}
+
+
+/* TUS KEYFRAMES ORIGINALES (Asegúrate de tenerlos al final de tu CSS) */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slowZoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); } /* Crece un 5% sutilmente */
+}
+
