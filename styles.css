@@ -113,7 +113,8 @@ html, body {
     align-items: flex-start; /* Alinea los personajes desde arriba de forma simétrica */
     gap: 40px; 
     width: 100%; /* Subido a 100% para que use todo el espacio de la caja de zoom */
-    max-width: 1200px; /* Un poco más ancho para que entren cómodos los 3 personajes */
+    min-height: 400px;
+    max-width: 1400px; /* Un poco más ancho para que entren cómodos los 3 personajes */
     margin: 20px auto 0 auto;
 }
 
@@ -128,7 +129,7 @@ html, body {
 
 .personajes .imagen-ellos {
     width: 100%;
-    max-height: 45vh; /* Ajustado para dar espacio al pie de imagen */
+    max-height: 65vh; /* Ajustado para dar espacio al pie de imagen */
     object-fit: contain; 
     border-radius: 8px; /* Un toque estético opcional */
 }
