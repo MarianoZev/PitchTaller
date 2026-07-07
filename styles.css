@@ -86,14 +86,26 @@ html, body {
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
+
+
+
+
+.imagen-ellos {
+    display: block;
+    max-width: 100%;
+    max-height: 100vh; /* Evita que se salga de la pantalla */
+    object-fit: contain; /* Conserva la proporción original del dibujo */
+    margin-top: 20px;
+}
+
 .mi-fila {
     display: flex !important; /* El !important asegura que ignore el flex-direction del contenedor padre */
     flex-direction: row !important; 
     justify-content: center;
     align-items: center;
     gap: 40px; /* Separación fija entre el texto y la imagen */
-    width: 70%;
-    max-width: 700px;
+    width: 85%;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -106,30 +118,10 @@ html, body {
 }
 
 
-.personajes {
-    display: flex !important; 
-    flex-direction: row !important; 
-    justify-content: center;
-    align-items: flex-start; /* Alinea los personajes desde arriba de forma simétrica */
-    gap: 40px; 
-    width: 100%; /* Subido a 100% para que use todo el espacio de la caja de zoom */
-    min-height: 400px;
-    max-width: 1400px; /* Un poco más ancho para que entren cómodos los 3 personajes */
-    margin: 20px auto 0 auto;
-}
-
-/* ESTO ES LO QUE FALTABA: Obliga a la imagen y al texto a apilarse verticalmente */
-.personajes .columna {
-    flex: 1; /* Distribuye el ancho por igual entre los 3 personajes */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
 
 .personajes .imagen-ellos {
     width: 100%;
-    max-height: 65vh; /* Ajustado para dar espacio al pie de imagen */
+    max-height: 45vh; /* Ajustado para dar espacio al pie de imagen */
     object-fit: contain; 
     border-radius: 8px; /* Un toque estético opcional */
 }
@@ -138,7 +130,7 @@ html, body {
 
 .pie-imagen {
     font-family: sans-serif;
-    font-size: 2rem; /* Un poco más pequeño para que parezca pie de foto */
+    font-size: 6rem; /* Un poco más pequeño para que parezca pie de foto */
     color: #000000; /* Color grisáceo sutil para que no compita con el título */
     margin-top: 12px; /* Espacio fijo entre la base de la imagen y el texto */
     text-align: center;
@@ -147,21 +139,16 @@ html, body {
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Asegura legibilidad sobre cualquier fondo */
 }
 
-.fondo {
-    display: flex;
-    flex-direction: column; /* Obliga al pie de imagen a ir estrictamente abajo */
-    align-items: center;
-    justify-content: center;
+.mi-video {
     width: 100%;
-    max-width: 800px; /* Controla el ancho máximo de la tarjeta de fondo en la pantalla */
-    margin: 20px auto 0 auto; /* Separa la imagen de la descripción de arriba */
+    max-height: 80vh;
+    object-fit: contain;
 }
 
-.background {
+.honey-video {
     width: 100%;
-    max-height: 85vh; /* Ajusta la altura del render para que no empuje el texto fuera de la pantalla */
-    object-fit: contain; /* Conserva la proporción original de tu dibujo de Harmony */
-    border-radius: 8px; /* Un toque estético limpio para los bordes */
+    max-height: 60vh;
+    object-fit: contain;
 }
 
 
